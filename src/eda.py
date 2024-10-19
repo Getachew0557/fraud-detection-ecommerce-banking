@@ -86,3 +86,79 @@ def univariateAnalysis(fraud_data, creditcard_data, ip_address_data):
     plt.xticks(rotation=45)
     plt.show()
 
+def bivariateAnalysis(fraud_data, creditcard_data, ip_address_data):
+    # Bar plots for categorical features vs. class
+    plt.figure(figsize=(10, 5))
+    sns.countplot(data=fraud_data, x='sex', hue='class')
+    plt.title('Count of Users by Sex and Class')
+    plt.xlabel('Sex')
+    plt.ylabel('Count')
+    plt.legend(title='Class')
+    plt.show()
+
+    plt.figure(figsize=(10, 5))
+    sns.countplot(data=fraud_data, x='source', hue='class')
+    plt.title('Count of Users by Source and Class')
+    plt.xlabel('Source')
+    plt.ylabel('Count')
+    plt.legend(title='Class')
+    plt.show()
+
+    # Creditcard_Data Correlation matrix
+    plt.figure(figsize=(18, 14))
+    correlation = creditcard_data.corr()
+    sns.heatmap(correlation, annot=True, fmt='.2f', cmap='coolwarm')
+    plt.title('Correlation Matrix for Creditcard_Data')
+    plt.show()
+
+    # Box plot for Time vs. target variable (assuming 'Class' is the target)
+    plt.figure(figsize=(10, 5))
+    sns.boxplot(data=creditcard_data, x='Class', y='Time')
+    plt.title('Box Plot of Time by Class')
+    plt.xlabel('Class')
+    plt.ylabel('Time')
+    plt.show()
+
+    # Count plot for lower_bound_ip_address and country
+    plt.figure(figsize=(14, 14))
+    sns.boxplot(data=ip_address_data, x='country', y='lower_bound_ip_address')
+    plt.title('Box Plot of Lower Bound IP Address by Country')
+    plt.xlabel('Country')
+    plt.ylabel('Lower Bound IP Address')
+    plt.xticks(rotation=45)
+    plt.show()
+
+    # Top 10 Countries by IP Address Count
+    plt.figure(figsize=(12, 8))
+    country_counts = ip_address_data['country'].value_counts()
+    country_counts[:10].plot(kind='barh')  # Show top 10 countries
+    plt.title('Top 10 Countries by IP Address Count')
+    plt.xlabel('Count')
+    plt.ylabel('Country')
+    plt.show()
+
+    # Bivariate analysis of purchase value vs fraud class
+    plt.figure(figsize=(10, 6))
+    sns.boxplot(x='class', y='purchase_value', data=fraud_data)
+    plt.title('Purchase Value vs Fraud Class')
+    plt.show()
+
+    # Bivariate analysis of age vs fraud class
+    plt.figure(figsize=(10, 6))
+    sns.boxplot(x='class', y='age', data=fraud_data)
+    plt.title('Age vs Fraud Class')
+    plt.show()
+
+
+    # Bivariate analysis for categorical variables (e.g., 'browser' vs 'class')
+    plt.figure(figsize=(12, 6))
+    sns.countplot(x='browser', hue='class', data=fraud_data)
+    plt.title('Browser Usage by Fraud Class')
+    plt.show()
+
+    # Bivariate analysis for 'age' vs 'purchase_value'
+    plt.figure(figsize=(10, 6))
+    sns.scatterplot(x='age', y='purchase_value', hue='class', data=fraud_data)
+    plt.title('Age vs Purchase Value (Colored by Fraud Class)')
+    plt.show()
+

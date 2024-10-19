@@ -5,7 +5,7 @@ sys.path.append(os.path.abspath('../src'))
 sys.path.append(os.path.abspath('../data'))
 from data_loading import load_data
 from data_preprocessing import preprocess_data
-from eda import univariateAnalysis
+from eda import univariateAnalysis, bivariateAnalysis
 
 def main():
     # Load dataset paths
@@ -23,5 +23,6 @@ def main():
     # Preprocess data
     fraud_data, creditcard_data, ip_address_data = preprocess_data(fraud_data, creditcard_data, ip_address_data)
     univariateAnalysis(fraud_data, creditcard_data, ip_address_data)
+    bivariateAnalysis(fraud_data, creditcard_data, ip_address_data)
 if __name__ == "__main__":
     main()
