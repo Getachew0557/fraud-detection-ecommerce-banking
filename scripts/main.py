@@ -4,7 +4,7 @@ import sys
 sys.path.append(os.path.abspath('../src'))
 sys.path.append(os.path.abspath('../data'))
 from data_loading import load_data
-from data_preprocessing import preprocess_data
+from data_preprocessing import preprocess_data, merge_ip_data
 from eda import univariateAnalysis, bivariateAnalysis
 
 def main():
@@ -24,5 +24,12 @@ def main():
     fraud_data, creditcard_data, ip_address_data = preprocess_data(fraud_data, creditcard_data, ip_address_data)
     univariateAnalysis(fraud_data, creditcard_data, ip_address_data)
     bivariateAnalysis(fraud_data, creditcard_data, ip_address_data)
+
+    # Preprocess data
+    fraud_data, creditcard_data, ip_address_data = preprocess_data(fraud_data, creditcard_data, ip_address_data)
+
+    # Merge IP data after preprocessing
+    merged_data = merge_ip_data(fraud_data, ip_address_data)
+
 if __name__ == "__main__":
     main()
