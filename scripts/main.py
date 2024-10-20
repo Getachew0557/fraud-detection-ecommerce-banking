@@ -24,8 +24,8 @@ def main():
 
     # Preprocess data
     fraud_data, creditcard_data, ip_address_data = preprocess_data(fraud_data, creditcard_data, ip_address_data)
-    #univariateAnalysis(fraud_data, creditcard_data, ip_address_data)
-    #bivariateAnalysis(fraud_data, creditcard_data, ip_address_data)
+    univariateAnalysis(fraud_data, creditcard_data, ip_address_data)
+    bivariateAnalysis(fraud_data, creditcard_data, ip_address_data)
 
     # Preprocess data
     fraud_data, creditcard_data, ip_address_data = preprocess_data(fraud_data, creditcard_data, ip_address_data)
