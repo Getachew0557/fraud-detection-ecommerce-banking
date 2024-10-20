@@ -30,6 +30,6 @@ def perform_normalization_and_encoding(fraud_data):
     fraud_data = one_hot_encode(fraud_data, categorical_features)
 
     # Save the cleaned DataFrame
-    fraud_data.to_csv("../data/Fraud_cleaned.csv", index=False)
+    fraud_data.to_csv("../data/Fraud_cleaned_data.csv", index=False)
 
     return fraud_data
