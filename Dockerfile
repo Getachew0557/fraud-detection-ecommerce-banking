@@ -16,4 +16,4 @@ COPY . .
 WORKDIR /app/tests
 
 # Run pytest for the tests
-CMD ["pytest", "--maxfail=1", "--disable-warnings", "-q"]
+#CMD ["pytest", "--maxfail=1", "--disable-warnings", "-q"]
