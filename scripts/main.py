@@ -6,6 +6,8 @@ sys.path.append(os.path.abspath('../data'))
 from data_loading import load_data
 from data_preprocessing import preprocess_data, merge_ip_data
 from eda import univariateAnalysis, bivariateAnalysis
+from feature_engineering import perform_feature_engineering
+from normalization_encoding import perform_normalization_and_encoding
 
 def main():
     # Load dataset paths
@@ -22,14 +24,25 @@ def main():
 
     # Preprocess data
     fraud_data, creditcard_data, ip_address_data = preprocess_data(fraud_data, creditcard_data, ip_address_data)
-    univariateAnalysis(fraud_data, creditcard_data, ip_address_data)
-    bivariateAnalysis(fraud_data, creditcard_data, ip_address_data)
+    #univariateAnalysis(fraud_data, creditcard_data, ip_address_data)
+    #bivariateAnalysis(fraud_data, creditcard_data, ip_address_data)
 
     # Preprocess data
     fraud_data, creditcard_data, ip_address_data = preprocess_data(fraud_data, creditcard_data, ip_address_data)
 
     # Merge IP data after preprocessing
     merged_data = merge_ip_data(fraud_data, ip_address_data)
+
+    # Perform feature engineering on fraud data
+    fraud_data = perform_feature_engineering(fraud_data)
+    # Display the final dataset with the newly engineered features
+    print("Feature engineered fraud data:")
+    print(fraud_data.head())
+
+    # Perform normalization and encoding
+    fraud_data = perform_normalization_and_encoding(fraud_data)
+    print(fraud_data.head())
+    
 
 if __name__ == "__main__":
     main()

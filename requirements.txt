@@ -4,3 +4,4 @@ seaborn
 matplotlib
 joblib
 scikit-learn
+pytest

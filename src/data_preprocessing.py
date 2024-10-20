@@ -46,3 +46,47 @@ def preprocess_data(fraud_data, creditcard_data, ip_address_data):
     print("\nUpdated IpAddress_Data data types:\n", ip_address_data.dtypes)
 
     return fraud_data, creditcard_data, ip_address_data
+
+# Function to convert IP address to integer
+def ip_to_integer(ip):
+    try:
+        return int(ip)
+    except ValueError:
+        return None  # Handle cases where conversion fails
+
+# Function to merge fraud and IP address data based on bounds
+def merge_ip_data(fraud_data, ip_address_data):
+    # Convert IP addresses in Fraud_Data to integer
+    fraud_data['ip_address'] = fraud_data['ip_address'].apply(ip_to_integer)
+
+    # Convert lower and upper bound IP addresses in IpAddress_Data to integer if needed
+    ip_address_data['lower_bound_ip_address'] = ip_address_data['lower_bound_ip_address'].apply(ip_to_integer)
+    ip_address_data['upper_bound_ip_address'] = ip_address_data['upper_bound_ip_address'].apply(ip_to_integer)
+
+    # Check if the column is in float format (it may be in scientific notation)
+    if fraud_data['ip_address'].dtype == 'float64':
+        fraud_data['ip_address'] = fraud_data['ip_address'].astype('int64')
+
+    # Merge the datasets based on lower_bound_ip_address first
+    merged_data = fraud_data.merge(
+        ip_address_data, 
+        how='left', 
+        left_on='ip_address', 
+        right_on='lower_bound_ip_address', 
+        suffixes=('', '_country')  # Temporary suffix to avoid conflicts
+    )
+
+    # Filter to keep only rows where ip_address falls within the specified bounds
+    merged_data = merged_data[
+        (merged_data['ip_address'] >= merged_data['lower_bound_ip_address']) & 
+        (merged_data['ip_address'] <= merged_data['upper_bound_ip_address'])
+    ]
+
+    # Drop unnecessary columns after the merge
+    merged_data.drop(columns=['lower_bound_ip_address', 'upper_bound_ip_address'], inplace=True)
+
+    # Display the merged and filtered data
+    print("Merged Data Sample:")
+    print(merged_data.head())
+    
+    return merged_data
