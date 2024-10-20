@@ -7,7 +7,7 @@ import pandas as pd
 sys.path.append(os.path.abspath('../src'))
 sys.path.append(os.path.abspath('../scripts'))
 sys.path.append(os.path.abspath('../tests'))
-from eda import univariateAnalysis
+from eda import univariateAnalysis, bivariateAnalysis
 from test_data_loading import load_sample_data
 
 class TestEDA(unittest.TestCase):
@@ -22,6 +22,7 @@ class TestEDA(unittest.TestCase):
         """
         try:
             univariateAnalysis(self.fraud_data, self.creditcard_data, self.ip_address_data)
+            bivariateAnalysis(self.fraud_data, self.creditcard_data, self.ip_address_data)
             self.assertTrue(True)  # If no error occurs, the test passes.
         except Exception as e:
             self.fail(f"EDA function failed with error: {e}")
