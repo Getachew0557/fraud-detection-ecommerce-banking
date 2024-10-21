@@ -8,6 +8,7 @@ from data_preprocessing import preprocess_data, merge_ip_data
 from eda import univariateAnalysis, bivariateAnalysis
 from feature_engineering import perform_feature_engineering
 from normalization_encoding import perform_normalization_and_encoding
+from model_building import split_data, apply_smote, evaluate_models
 
 def main():
     # Load dataset paths
@@ -42,6 +43,29 @@ def main():
     # Perform normalization and encoding
     fraud_data = perform_normalization_and_encoding(fraud_data)
     print(fraud_data.head())
+
+
+    # Split the data into training and testing sets
+    (X_train_creditcard, X_test_creditcard, y_train_creditcard, y_test_creditcard,
+     X_train_fraud, X_test_fraud, y_train_fraud, y_test_fraud) = split_data(creditcard_data, fraud_data)
+
+    # Apply SMOTE to the training data
+    (X_train_creditcard_resampled, y_train_creditcard_resampled,
+     X_train_fraud_resampled, y_train_fraud_resampled) = apply_smote(X_train_creditcard, y_train_creditcard,
+                                                                     X_train_fraud, y_train_fraud)
+
+    # Display value counts of the resampled data
+    print("Resampled Credit Card Training Class Distribution:")
+    print(y_train_creditcard_resampled.value_counts())
+
+    print("Resampled Fraud Training Class Distribution:")
+    print(y_train_fraud_resampled.value_counts())
+
+    # Evaluate models on Credit Card and Fraud data
+    auc_scores = evaluate_models(X_train_creditcard_resampled, y_train_creditcard_resampled, 
+                                  X_test_creditcard, y_test_creditcard, 
+                                  X_train_fraud_resampled, y_train_fraud_resampled, 
+                                  X_test_fraud, y_test_fraud)
     
 
 if __name__ == "__main__":
