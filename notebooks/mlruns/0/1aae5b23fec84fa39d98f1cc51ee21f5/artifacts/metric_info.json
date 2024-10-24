@@ -1,0 +1,6 @@
+{
+  "accuracy_score_X_test_fraud": "accuracy_score(y_true=y_test_fraud, y_pred=y_pred_fraud)",
+  "f1_score_X_test_fraud": "f1_score(y_true=y_test_fraud, y_pred=y_pred_fraud, average='weighted')",
+  "precision_score_X_test_fraud": "precision_score(y_true=y_test_fraud, y_pred=y_pred_fraud, average='weighted')",
+  "recall_score_X_test_fraud": "recall_score(y_true=y_test_fraud, y_pred=y_pred_fraud, average='weighted')"
+}

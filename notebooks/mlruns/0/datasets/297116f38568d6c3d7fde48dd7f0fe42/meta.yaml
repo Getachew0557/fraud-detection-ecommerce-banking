@@ -1,0 +1,9 @@
+digest: ccd093be
+name: dataset
+profile: '{"features_shape": [394, 30], "features_size": 11820, "features_nbytes":
+  94560}'
+schema: '{"mlflow_tensorspec": {"features": "[{\"type\": \"tensor\", \"tensor-spec\":
+  {\"dtype\": \"float64\", \"shape\": [-1, 30]}}]", "targets": null}}'
+source: '{"tags": {"mlflow.user": "getac", "mlflow.source.name": "c:\\Users\\getac\\anaconda3\\lib\\site-packages\\ipykernel_launcher.py",
+  "mlflow.source.type": "LOCAL"}}'
+source_type: code

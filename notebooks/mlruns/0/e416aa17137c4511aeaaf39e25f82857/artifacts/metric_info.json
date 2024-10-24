@@ -1,0 +1,6 @@
+{
+  "accuracy_score_X_test_creditcard": "accuracy_score(y_true=y_test_creditcard, y_pred=y_pred_creditcard)",
+  "f1_score_X_test_creditcard": "f1_score(y_true=y_test_creditcard, y_pred=y_pred_creditcard, average='weighted')",
+  "precision_score_X_test_creditcard": "precision_score(y_true=y_test_creditcard, y_pred=y_pred_creditcard, average='weighted')",
+  "recall_score_X_test_creditcard": "recall_score(y_true=y_test_creditcard, y_pred=y_pred_creditcard, average='weighted')"
+}

@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/getac/Documents/10%20Academy/week%208%269/Fraud-detection-ecommerce/notebooks/mlruns/0/1d35b9af9f4e4d73bfa790ac9b25f6cc/artifacts
+end_time: 1729710964535
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1d35b9af9f4e4d73bfa790ac9b25f6cc
+run_name: languid-smelt-570
+run_uuid: 1d35b9af9f4e4d73bfa790ac9b25f6cc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1729710941771
+status: 3
+tags: []
+user_id: getac

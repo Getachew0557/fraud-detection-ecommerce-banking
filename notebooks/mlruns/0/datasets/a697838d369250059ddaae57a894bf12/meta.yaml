@@ -1,0 +1,25 @@
+digest: 4dc180d8
+name: dataset
+profile: '{"num_rows": 56962, "num_elements": 1708860}'
+schema: '{"mlflow_colspec": [{"type": "double", "name": "Time", "required": true},
+  {"type": "double", "name": "V1", "required": true}, {"type": "double", "name": "V2",
+  "required": true}, {"type": "double", "name": "V3", "required": true}, {"type":
+  "double", "name": "V4", "required": true}, {"type": "double", "name": "V5", "required":
+  true}, {"type": "double", "name": "V6", "required": true}, {"type": "double", "name":
+  "V7", "required": true}, {"type": "double", "name": "V8", "required": true}, {"type":
+  "double", "name": "V9", "required": true}, {"type": "double", "name": "V10", "required":
+  true}, {"type": "double", "name": "V11", "required": true}, {"type": "double", "name":
+  "V12", "required": true}, {"type": "double", "name": "V13", "required": true}, {"type":
+  "double", "name": "V14", "required": true}, {"type": "double", "name": "V15", "required":
+  true}, {"type": "double", "name": "V16", "required": true}, {"type": "double", "name":
+  "V17", "required": true}, {"type": "double", "name": "V18", "required": true}, {"type":
+  "double", "name": "V19", "required": true}, {"type": "double", "name": "V20", "required":
+  true}, {"type": "double", "name": "V21", "required": true}, {"type": "double", "name":
+  "V22", "required": true}, {"type": "double", "name": "V23", "required": true}, {"type":
+  "double", "name": "V24", "required": true}, {"type": "double", "name": "V25", "required":
+  true}, {"type": "double", "name": "V26", "required": true}, {"type": "double", "name":
+  "V27", "required": true}, {"type": "double", "name": "V28", "required": true}, {"type":
+  "double", "name": "Amount", "required": true}]}'
+source: '{"tags": {"mlflow.user": "getac", "mlflow.source.name": "c:\\Users\\getac\\anaconda3\\lib\\site-packages\\ipykernel_launcher.py",
+  "mlflow.source.type": "LOCAL"}}'
+source_type: code
