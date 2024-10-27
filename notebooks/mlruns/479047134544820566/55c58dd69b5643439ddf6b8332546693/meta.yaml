@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/479047134544820566/55c58dd69b5643439ddf6b8332546693/artifacts
+end_time: 1729969731787
+entry_point_name: ''
+experiment_id: '479047134544820566'
+lifecycle_stage: active
+run_id: 55c58dd69b5643439ddf6b8332546693
+run_name: Decision Tree
+run_uuid: 55c58dd69b5643439ddf6b8332546693
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1729969714673
+status: 3
+tags: []
+user_id: getac

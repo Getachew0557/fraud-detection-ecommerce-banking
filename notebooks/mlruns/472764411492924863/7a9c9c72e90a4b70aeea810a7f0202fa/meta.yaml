@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/472764411492924863/7a9c9c72e90a4b70aeea810a7f0202fa/artifacts
+end_time: 1729970615106
+entry_point_name: ''
+experiment_id: '472764411492924863'
+lifecycle_stage: active
+run_id: 7a9c9c72e90a4b70aeea810a7f0202fa
+run_name: CNN
+run_uuid: 7a9c9c72e90a4b70aeea810a7f0202fa
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1729969734455
+status: 3
+tags: []
+user_id: getac
