@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/479047134544820566/04318891e7014b73bf377a9b7a49f410/artifacts
+end_time: 1729969714612
+entry_point_name: ''
+experiment_id: '479047134544820566'
+lifecycle_stage: active
+run_id: 04318891e7014b73bf377a9b7a49f410
+run_name: XGBClassifier
+run_uuid: 04318891e7014b73bf377a9b7a49f410
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1729969708334
+status: 3
+tags: []
+user_id: getac

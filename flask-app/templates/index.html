@@ -1,0 +1,71 @@
+<!-- app/templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection API</title>
+    <link href="{{ url_for('static', filename='tailwind.css') }}" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p- rounded shadow-md w-full max-w-md">
+        <h2 class="text-3xl font-bold mb-6 text-blue-600 text-center">Fraud Detection</h2>
+        <form id="prediction-form" action="/predict" method="POST" class="space-y-4">
+            <div class="flex flex-col">
+                <label for="purchase_value" class="mb-1 text-gray-700">Purchase Value</label>
+                <input type="number" name="purchase_value" id="purchase_value" placeholder="Purchase Value" class="block w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-500" required>
+            </div>
+            <div class="flex flex-col">
+                <label for="age" class="mb-1 text-gray-700 text-3xl">Age</label>
+                <input type="number" name="age" id="age" placeholder="Age" class="block w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-500" required>
+            </div>
+            <div class="flex flex-col">
+                <label for="ip_address" class="mb-1 text-gray-700 text-3x2">IP Address</label>
+                <input type="text" name="ip_address" id="ip_address" placeholder="IP Address" class="block w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-500" required>
+            </div>
+            <div class="flex flex-col">
+                <label for="signup_time" class="mb-2 mt-5 text-gray-700 ">Signup Time</label>
+                <input type="datetime-local" name="signup_time" id="signup_time" class="block w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-500" required>
+            </div>
+            <div class="flex flex-col">
+                <label for="purchase_time" class="mb-1 text-gray-700">Purchase Time</label>
+                <input type="datetime-local" name="purchase_time" id="purchase_time" class="block w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-500" required>
+            </div>
+            <div class="flex flex-col">
+                <label for="source" class="mb-1 text-gray-700">Source</label>
+                <input type="text" name="source" id="source" placeholder="Source" class="block w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-500" required>
+            </div>
+            <div class="flex flex-col">
+                <label for="browser" class="mb-1 text-gray-700">Browser</label>
+                <input type="text" name="browser" id="browser" placeholder="Browser" class="block w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-500" required>
+            </div>
+            <div class="flex flex-col">
+                <label for="sex" class="mb-1 text-gray-700">Sex</label>
+                <input type="text" name="sex" id="sex" placeholder="Sex" class="block w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-500" required>
+            </div>
+            <div class="flex flex-col">
+                <label for="device_id" class="mb-1 text-gray-700">Device ID</label>
+                <input type="text" name="device_id" id="device_id" placeholder="Device ID" class="block w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-500" required>
+            </div>
+            <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded hover:bg-blue-700 transition duration-200">Predict</button>
+        </form>
+        <div id="result" class="mt-4 text-gray-700 text-center"></div>
+    </div>
+</body>
+<script>
+document.getElementById('prediction-form').onsubmit = async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+    const response = await fetch('/predict', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+    });
+    const result = await response.json();
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerText = result.prediction === 1 ? 'Prediction: Fraud' : 'Prediction: Not Fraud';
+    resultDiv.className = result.prediction === 1 ? 'text-red-500' : 'text-green-500';
+};
+</script>
+</html>
