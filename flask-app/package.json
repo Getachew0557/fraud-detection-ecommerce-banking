@@ -98,7 +98,7 @@
     "yaml": "^2.6.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-css": "./node_modules/.bin/tailwindcss -i ./static/src/input.css -o ./static/css/main.css --watch"
   },
   "keywords": [],
   "author": "",
