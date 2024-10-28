@@ -1,0 +1,18 @@
+/* assets/style.css */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.summary-boxes {
+    padding: 20px;
+}
+
+h1 {
+    color: #4a4a4a;
+    text-align: center;
+}
+
+.graph {
+    margin: 20px;
+}
