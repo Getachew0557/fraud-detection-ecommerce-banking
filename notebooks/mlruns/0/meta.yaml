@@ -2,5 +2,9 @@ artifact_location: file:///c:/Users/getac/Documents/10%20Academy/week%208%269/Fr
 creation_time: 1730099085933
 experiment_id: '0'
 last_update_time: 1730099085933
+artifact_location: mlflow-artifacts:/0
+creation_time: 1729968959581
+experiment_id: '0'
+last_update_time: 1729968959581
 lifecycle_stage: active
 name: Default

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/295335946715183713/8386351fa86c4f069efa5d1e70ecccf7/artifacts
+end_time: 1730015743653
+entry_point_name: ''
+experiment_id: '295335946715183713'
+lifecycle_stage: active
+run_id: 8386351fa86c4f069efa5d1e70ecccf7
+run_name: LSTM
+run_uuid: 8386351fa86c4f069efa5d1e70ecccf7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730014695371
+status: 3
+tags: []
+user_id: getac
