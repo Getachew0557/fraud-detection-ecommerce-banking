@@ -559,87 +559,89 @@ video {
 /* Main CSS for layout and styling */
 
 body {
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 .bg-gradient {
-    background: linear-gradient(135deg, #1c92d2, #f2fcfe);
+  background: linear-gradient(135deg, #1c92d2, #f2fcfe);
 }
 
 .container {
-    max-width: 1000px;
-    padding: 2.5rem;
-    margin: 0 auto;
+  max-width: 1000px;
+  padding: 2.5rem;
+  margin: 0 auto;
 }
 
 h1 {
-    font-size: 2.5rem;
-    color: #2563EB;
+  font-size: 2.5rem;
+  color: #2563EB;
+  margin-left: 10rem;
 }
 
 p {
-    color: #4B5563;
-    font-size: 1.1rem;
+  color: #4B5563;
+  font-size: 1.1rem;
 }
 
 /* Grid layout for two-column form */
 .form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  justify-content: center;
 }
 
 .form-column {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
 }
 
 label {
-    font-weight: 600;
-    color: #374151;
-    margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
 }
 
 .input-field {
-    padding: 1rem;
-    border: 1px solid #D1D5DB;
-    border-radius: 8px;
-    outline: none;
-    width: 100%;
-    font-size: 1rem;
-    transition: border-color 0.3s;
+  padding: 1rem;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  outline: none;
+  width: 100%;
+  font-size: 1rem;
+  transition: border-color 0.3s;
 }
 
 .input-field:focus {
-    border-color: #2563EB;
-    box-shadow: 0 0 8px rgba(37, 99, 235, 0.3);
+  border-color: #2563EB;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.3);
 }
 
 .btn-primary {
-    padding: 0.75rem 1.5rem;
-    background-color: #2563EB;
-    color: white;
-    font-weight: 600;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #2563EB;
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1.1rem;
+  margin-left: 20rem; /* Optional: add margin for better spacing */
 }
 
 .btn-primary:hover {
-    background-color: #1E40AF;
+  background-color: #1E40AF;
 }
 
 /* Adjust for centered Sex field */
 .col-span-1 {
-    grid-column: span 1;
-    text-align: left; /* Align text to the left for a uniform look */
+  grid-column: span 1;
+  text-align: left; /* Align text to the left for a uniform look */
 }
