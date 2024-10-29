@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/getac/Documents/10%20Academy/week%208%269/Fraud-detection-ecommerce/notebooks/mlruns/538797330414783680/cc9621125abc4e109bbde8d5f30e342c/artifacts
+end_time: 1730100386452
+entry_point_name: ''
+experiment_id: '538797330414783680'
+lifecycle_stage: active
+run_id: cc9621125abc4e109bbde8d5f30e342c
+run_name: Logistic Regression
+run_uuid: cc9621125abc4e109bbde8d5f30e342c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730100280531
+status: 3
+tags: []
+user_id: getac

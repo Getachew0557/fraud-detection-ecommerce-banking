@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/479047134544820566/0886fc596b6f4806a14b960791f99a18/artifacts
+end_time: 1729969708178
+entry_point_name: ''
+experiment_id: '479047134544820566'
+lifecycle_stage: active
+run_id: 0886fc596b6f4806a14b960791f99a18
+run_name: Random Forest
+run_uuid: 0886fc596b6f4806a14b960791f99a18
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1729969666747
+status: 3
+tags: []
+user_id: getac

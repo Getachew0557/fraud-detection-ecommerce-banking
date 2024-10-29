@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/getac/Documents/10%20Academy/week%208%269/Fraud-detection-ecommerce/notebooks/mlruns/538797330414783680/6b193dbf6f8d4aff95b8a8151a64d9ca/artifacts
+end_time: 1730100656989
+entry_point_name: ''
+experiment_id: '538797330414783680'
+lifecycle_stage: active
+run_id: 6b193dbf6f8d4aff95b8a8151a64d9ca
+run_name: Random Forest
+run_uuid: 6b193dbf6f8d4aff95b8a8151a64d9ca
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730100386787
+status: 3
+tags: []
+user_id: getac

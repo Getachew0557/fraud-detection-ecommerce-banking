@@ -1,0 +1,21 @@
+digest: bac72825
+name: dataset
+profile: '{"num_rows": 30223, "num_elements": 574237}'
+schema: '{"mlflow_colspec": [{"type": "long", "name": "Unnamed: 0", "required": true},
+  {"type": "double", "name": "purchase_value", "required": true}, {"type": "double",
+  "name": "age", "required": true}, {"type": "double", "name": "ip_address", "required":
+  true}, {"type": "long", "name": "frequency", "required": true}, {"type": "long",
+  "name": "velocity", "required": true}, {"type": "double", "name": "hour_of_day",
+  "required": true}, {"type": "double", "name": "day_of_week", "required": true},
+  {"type": "double", "name": "time_diff", "required": true}, {"type": "long", "name":
+  "signup_hour", "required": true}, {"type": "long", "name": "signup_day_of_week",
+  "required": true}, {"type": "long", "name": "purchase_day_of_week", "required":
+  true}, {"type": "boolean", "name": "source_Direct", "required": true}, {"type":
+  "boolean", "name": "source_SEO", "required": true}, {"type": "boolean", "name":
+  "browser_FireFox", "required": true}, {"type": "boolean", "name": "browser_IE",
+  "required": true}, {"type": "boolean", "name": "browser_Opera", "required": true},
+  {"type": "boolean", "name": "browser_Safari", "required": true}, {"type": "boolean",
+  "name": "sex_M", "required": true}]}'
+source: '{"tags": {"mlflow.user": "getac", "mlflow.source.name": "c:\\Users\\getac\\anaconda3\\lib\\site-packages\\ipykernel_launcher.py",
+  "mlflow.source.type": "LOCAL"}}'
+source_type: code
