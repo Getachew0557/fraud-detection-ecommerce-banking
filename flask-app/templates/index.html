@@ -19,33 +19,33 @@
             <!-- Left Column -->
             <div class="form-column">
                 <div class="form-group">
-                    <label for="purchase_value">Purchase Value</label>
-                    <input type="number" name="purchase_value" id="purchase_value" placeholder="Enter Purchase Value" class="input-field" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="age">Age</label>
-                    <input type="number" name="age" id="age" placeholder="Enter Age" class="input-field" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="ip_address">IP Address</label>
-                    <input type="text" name="ip_address" id="ip_address" placeholder="Enter IP Address" class="input-field" required>
+                    <label for="user_id">User ID</label>
+                    <input type="text" name="user_id" id="user_id" placeholder="Enter User ID" class="input-field" required>
                 </div>
 
                 <div class="form-group">
                     <label for="signup_time">Signup Time</label>
                     <input type="datetime-local" name="signup_time" id="signup_time" class="input-field" required>
                 </div>
-            </div>
 
-            <!-- Right Column -->
-            <div class="form-column">
                 <div class="form-group">
                     <label for="purchase_time">Purchase Time</label>
                     <input type="datetime-local" name="purchase_time" id="purchase_time" class="input-field" required>
                 </div>
 
+                <div class="form-group">
+                    <label for="purchase_value">Purchase Value</label>
+                    <input type="number" name="purchase_value" id="purchase_value" placeholder="Enter Purchase Value" class="input-field" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="device_id">Device ID</label>
+                    <input type="text" name="device_id" id="device_id" placeholder="Enter Device ID" class="input-field" required>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="form-column">
                 <div class="form-group">
                     <label for="source">Source</label>
                     <input type="text" name="source" id="source" placeholder="Enter Source" class="input-field" required>
@@ -57,18 +57,22 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="device_id">Device ID</label>
-                    <input type="text" name="device_id" id="device_id" placeholder="Enter Device ID" class="input-field" required>
+                    <label for="sex">Sex</label>
+                    <input type="text" name="sex" id="sex" placeholder="Enter Sex" class="input-field" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" name="age" id="age" placeholder="Enter Age" class="input-field" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ip_address">IP Address</label>
+                    <input type="text" name="ip_address" id="ip_address" placeholder="Enter IP Address" class="input-field" required>
                 </div>
             </div>
 
-            <!-- Centered Sex Field with reduced top margin -->
-            <div class="form-group col-span-1 mt-4 mb-10">
-                <label for="sex">Sex</label>
-                <input type="text" name="sex" id="sex" placeholder="Enter Sex" class="input-field" required>
-            </div>
-
-            <!-- Centered Submit Button with increased top margin -->
+            <!-- Centered Submit Button -->
             <div class="text-center col-span-2 mt-15">
                 <button type="submit" class="btn-primary">Predict</button>
             </div>
