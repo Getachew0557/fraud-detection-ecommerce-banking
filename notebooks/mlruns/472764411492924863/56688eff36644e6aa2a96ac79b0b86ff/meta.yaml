@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/472764411492924863/56688eff36644e6aa2a96ac79b0b86ff/artifacts
+end_time: 1730014491798
+entry_point_name: ''
+experiment_id: '472764411492924863'
+lifecycle_stage: active
+run_id: 56688eff36644e6aa2a96ac79b0b86ff
+run_name: RNN
+run_uuid: 56688eff36644e6aa2a96ac79b0b86ff
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730013873281
+status: 3
+tags: []
+user_id: getac

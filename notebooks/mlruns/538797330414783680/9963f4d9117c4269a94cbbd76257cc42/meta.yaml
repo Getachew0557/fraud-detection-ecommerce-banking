@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/getac/Documents/10%20Academy/week%208%269/Fraud-detection-ecommerce/notebooks/mlruns/538797330414783680/9963f4d9117c4269a94cbbd76257cc42/artifacts
+end_time: 1730100668749
+entry_point_name: ''
+experiment_id: '538797330414783680'
+lifecycle_stage: active
+run_id: 9963f4d9117c4269a94cbbd76257cc42
+run_name: XGBClassifier
+run_uuid: 9963f4d9117c4269a94cbbd76257cc42
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730100657191
+status: 3
+tags: []
+user_id: getac
