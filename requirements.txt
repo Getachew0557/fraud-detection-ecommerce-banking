@@ -8,3 +8,30 @@ pytest
 Flask
 xgboost
 tailwindcss
+plotly
+dash
+lightgbm
+tensorflow
+keras
+
+imbalanced-learn
+shap
+lime
+
+flask
+flask-cors
+
+mlflow
+
+dash-bootstrap-components
+
+# Web Application Deployment
+gunicorn
+
+# Docker Deployment
+docker
+
+# Additional Utilities
+ipython
+jupyter
+flask-logging
