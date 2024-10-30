@@ -13,7 +13,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of the application code into the container
 COPY . .
 # Set the working directory to tests (to run pytest within the tests directory)
-WORKDIR /app/tests
+#WORKDIR /app/tests
+
+# Expose ports for Flask, MLflow, and Dash
+EXPOSE 8000 5000 8050
+
 
 # Run pytest for the tests
 #CMD ["pytest", "--maxfail=1", "--disable-warnings", "-q"]

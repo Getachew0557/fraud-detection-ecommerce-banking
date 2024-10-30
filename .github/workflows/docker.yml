@@ -15,29 +15,37 @@ jobs:
       - name: Cache Docker layers
         uses: actions/cache@v3
         with:
-          path: |
-            ~/.docker/cache
+          path: ~/.docker/cache
           key: ${{ runner.os }}-docker-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-docker-
 
-      - name: Build Docker image
+      - name: Build Docker images
         run: |
-          docker build -t my-app-image:latest -f Dockerfile .
-
-      - name: Save Docker image
-        run: |
-          docker save my-app-image:latest -o my-app-image.tar
-
-      - name: Upload Docker image artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: my-app-image
-          path: my-app-image.tar
+          docker build -t flask-app -f Dockerfile .
+          docker build -t dashboard -f Dockerfile .
+          docker build -t mlflow -f Dockerfile .
 
       - name: Run tests
+        run: docker run --rm flask-app
+
+      - name: Save Docker images
         run: |
-          docker run --rm my-app-image:latest
+          docker save flask-app -o flask-app.tar
+          docker save dashboard -o dashboard.tar
+          docker save mlflow -o mlflow.tar
+
+      - name: Upload Docker images artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: flask-app
+          path: flask-app.tar
+        with:
+          name: dashboard
+          path: dashboard.tar
+        with:
+          name: mlflow
+          path: mlflow.tar
 
   deploy:
     runs-on: ubuntu-latest
@@ -46,10 +54,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Download Docker image artifact
+      - name: Download Docker images artifacts
         uses: actions/download-artifact@v3
         with:
-          name: my-app-image
+          name: flask-app
+          name: dashboard
+          name: mlflow
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
@@ -57,14 +67,20 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Load Docker image
+      - name: Load Docker images
         run: |
-          docker load -i my-app-image.tar
+          docker load -i flask-app.tar
+          docker load -i dashboard.tar
+          docker load -i mlflow.tar
 
-      - name: Tag Docker image
+      - name: Tag Docker images
         run: |
-          docker tag my-app-image:latest ${{ secrets.DOCKER_USERNAME }}/my-app-image:latest
+          docker tag flask-app ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
+          docker tag dashboard ${{ secrets.DOCKER_USERNAME }}/dashboard:latest
+          docker tag mlflow ${{ secrets.DOCKER_USERNAME }}/mlflow:latest
 
-      - name: Push Docker image to Docker Hub
+      - name: Push Docker images to Docker Hub
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/my-app-image:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/flask-app:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/dashboard:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/mlflow:latest

@@ -50,3 +50,97 @@ An interactive dashboard built with Dash to visualize fraud detection insights s
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/fraud-detection-ecommerce-banking.git
+
+2. Install required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
+## Usage
+### 1. Running MLflow
+   - Navigate to the MLflow directory:
+
+      ``bash
+      cd mlflow
+      ```
+   - Start the MLflow server:
+
+      ```bash
+      mlflow ui
+      ```
+   - Access the MLflow dashboard at `http://localhost:5000`.
+
+### 2. Running Flask App
+   #### Without Docker
+   - Navigate to the Flask app directory:
+
+      ```bash
+      cd flask_app
+      ```
+   - Start the Flask app:
+
+      ```bash
+      flask run
+      ```
+   - Access the Flask API at `http://localhost:5000`.
+
+   #### With Docker
+   - Navigate to the Flask app directory:
+
+      ```bash
+      cd flask_app
+      ```
+   - Build the Docker image:
+
+      ```bash
+      docker build -t fraud-detection-flask
+      ``` 
+   - Run the Docker container:
+
+      ```bash
+      Copy code
+      docker run -p 5000:5000 fraud-detection-flask
+      ```
+   - Access the Flask API at `http://localhost:5000`
+
+### 3. Running Dash Dashboard
+#### Without Docker
+- Navigate to the Dash dashboard directory:
+
+   ```bash
+   cd dash_dashboard
+   ```
+- Start the Dash app:
+
+   ```bash
+   python app.py
+   ```
+- Access the Dash dashboard at `http://localhost:8050`
+
+#### With Docker
+- Navigate to the Dash dashboard directory:
+
+   ```bash
+   cd dash_dashboard
+   ```
+- Build the Docker image:
+
+   ```bash
+   docker build -t fraud-detection-dash 
+   ```
+- Run the Docker container:
+
+   ```bash
+   docker run -p 8050:8050 fraud-detection-dash
+   ```
+- Access the Dash dashboard at `http://localhost:8050`
+
+## Contact Information
+
+- **Name: Getachew Getu**
+- GitHub: [Getachew0557](https://github.com/Getachew0557)
+- Email: [getachewgetu2010@gmail.com](mailto:getachewgetu2010@gmail.com)
+- LinkedIn: [Getachew Getu](https://www.linkedin.com/in/getachew-getu-9534041a4)
+
+## License
+
+This project is licensed under the Apache License 2.0. See the [LICENSE](LICENSE) file for more details.

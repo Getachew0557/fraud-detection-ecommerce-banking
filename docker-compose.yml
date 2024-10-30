@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  flask-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python flask-app/app.py  # Command to start Flask app
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - FLASK_ENV=development
+
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python dashboard/app.py  # Command to start Dash app
+    volumes:
+      - .:/app
+    ports:
+      - "8050:8050"
+    environment:
+      - DASH_ENV=development
+
+  mlflow:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: mlflow ui --host 0.0.0.0 --port 5000  # Command to start MLflow
+    volumes:
+      - .:/app
+    ports:
+      - "5000:5000"
