@@ -11,15 +11,18 @@ const Home = () => {
   const [ipCountryData, setIpCountryData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/overview')
+    // axios.get('http://localhost:8000/overview')
+    axios.get(`${API_BASE_URL}/overview`)
       .then(response => setOverviewData(response.data))
       .catch(error => console.error('Error fetching overview data:', error));
 
-    axios.get('http://localhost:8000/distribution')
+    // axios.get('http://localhost:8000/distribution')
+    axios.get(`${API_BASE_URL}/distribution`)
       .then(response => setDistributionData(response.data))
       .catch(error => console.error('Error fetching distribution data:', error));
 
-    axios.get('http://localhost:8000/ip-country-distribution')
+    // axios.get('http://localhost:8000/ip-country-distribution')
+    axios.get(`${API_BASE_URL}/ip-country-distribution`)
       .then(response => setIpCountryData(response.data))
       .catch(error => console.error('Error fetching IP-country data:', error));
   }, []);
