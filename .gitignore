@@ -6,6 +6,6 @@ __pycache__/
 .venv/
 myenve
 base
-#data/
+data/
 notebooks/mlruns/0/4e11e6443c934bfeb7c65a524e65ba75/
 
